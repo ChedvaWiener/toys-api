@@ -1,0 +1,890 @@
+<!--
+ API Documentation HTML Template  - 1.0.1
+ Copyright © 2016 Florian Nicolas
+ Licensed under the MIT license.
+ https://github.com/ticlekiwi/API-Documentation-HTML-Template
+ !-->
+ <!DOCTYPE html>
+ <html class="no-js" lang="en">
+ 
+ <head>
+     <meta charset="utf-8">
+     <title>API - Documentation</title>
+     <meta name="description" content="">
+     <meta name="author" content="ticlekiwi">
+ 
+     <meta http-equiv="cleartype" content="on">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+     <link rel="stylesheet" href="css/hightlightjs-dark.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link
+         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap"
+         rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css" media="all">
+     <script>hljs.initHighlightingOnLoad();</script>
+ </head>
+ 
+ <body>
+     <div class="left-menu">
+         <div class="content-logo">
+             <div class="logo">
+                 <span> API Documentation</span>
+             </div>
+             <button class="burger-menu-icon" id="button-menu-mobile">
+                 <svg width="34" height="34" viewBox="0 0 100 100">
+                     <path class="line line1"
+                         d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058">
+                     </path>
+                     <path class="line line2" d="M 20,50 H 80"></path>
+                     <path class="line line3"
+                         d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942">
+                     </path>
+                 </svg>
+             </button>
+         </div>
+         <div class="mobile-menu-closer"></div>
+         <div class="content-menu">
+             <ul>
+                 <li class="scroll-to-link active" data-target="content-get-started">
+                     <a>Get Started</a>
+                 </li>
+                 <li class="scroll-to-link" data-target="content-sign-up">
+                     <a>Sign Up</a>
+                 </li>
+                 <li class="scroll-to-link" data-target="content-users-info">
+                     <a>User's info <span style="font-size: small;">(admin)</span></a>
+                 </li>
+                 <li class="scroll-to-link" data-target="content-toys-info">
+                     <a>Toys info</a>
+                 </li>
+                 <li class="scroll-to-link" data-target="content-search">
+                     <a>Toys Search</a>
+                 </li>
+                 <li class="scroll-to-link" data-target="content-category">
+                     <a>Toys category</a>
+                 </li>
+                 <li class="scroll-to-link" data-target="content-price">
+                     <a>Toys Price</a>
+                 </li>
+                 <li class="scroll-to-link" data-target="content-single">
+                     <a>single toy</a>
+                 </li>
+             </li>
+             <li class="scroll-to-link" data-target="content-add">
+                 <a>add toy</a>
+             </li>
+             <li class="scroll-to-link" data-target="content-delete">
+                 <a>delete toy</a>
+             </li>
+             <li class="scroll-to-link" data-target="content-edit">
+                 <a>edit toy</a>
+             </li>
+                 <li class="scroll-to-link" data-target="content-errors">
+                     <a>Errors</a>
+                 </li>
+             </ul>
+         </div>
+     </div>
+     <div class="content-page">
+         <div class="content-code"></div>
+         <div class="content">
+             <div class="overflow-hidden content-section" id="content-get-started">
+                 <h1>Get started</h1>
+                 <pre>
+     API Endpoint
+ 
+         https://api.****************.com/
+                 </pre>
+                 <p>
+                     By log in you can add, edit and remove your own toys , Admin has the ability to delete and modify users and their toys.
+                 </p>
+                 <p>
+                     All HTTP methods are supported. You can use http or https for your requests.
+                 </p>
+             </div>
+             <div class="overflow-hidden content-section" id="content-sign-up">
+                 <h2>Sign Up</h2>
+                 <pre><code class="json">
+ Body example
+ {
+     "firstName": "Chedva",
+     "lastName": "Wiener",
+     "email": "merola.we@gmail.com",
+     "password": "1Aa123456",
+     "role": "user"
+ }
+                 </code></pre>
+                 <p>
+                     Sign up a new user.<br> POST call to the following url :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/user/</code>
+                 </p>
+                 <br>
+                 <pre><code class="json">
+ Result example :
+ 
+ {
+     "firstName": "Chedva",
+     "lastName": "Wiener",
+     "email": "merola.we@gmail.com",
+     "password": "******",
+     "date_created": "2023-11-30T17:57:11.789Z",
+     "toys": [],
+     "role": "user",
+     "_id": "6568cf4140bc65ca52afa59f",
+     "__v": 0
+ }
+                 </code></pre>
+                 <h4>BODY PARAMETERS</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Required</th>
+                             <th>Description</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>firstName</td>
+                             <td>Yes</td>
+                             <td>(String) First name, min length 2 characters max length 100 characters.</td>
+                         </tr>
+ 
+                         <tr>
+                             <td>lastName</td>
+                             <td>Yes</td>
+                             <td>(String) Last name, min length 2 characters max length 100 characters.</td>
+                         </tr>
+                         <tr>
+                             <td>email</td>
+                             <td>Yes</td>
+                             <td>(Email) Email, min length 2 characters max length 100 characters.</td>
+ 
+                         </tr>
+                         <tr>
+                             <td>password</td>
+                             <td>Yes</td>
+                             <td>(String) Password, min length 6 characters max length 100 characters. Must contain at
+                                 least one lowercase letter, one uppercase letter, and one digit. </td>
+ 
+                         </tr>
+                         <tr>
+                             <td>role</td>
+                             <td>No</td>
+                             <td>(Default: user) Role, possible values: "user", "admin".</td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+ 
+ 
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-sign-in">
+                 <h2>Sign In</h2>
+                 <pre><code class="json">
+ Body example
+ {
+     "email": "demo.we@gmail.com",
+     "password": "1Aa123456"
+ }
+                 </code></pre>
+                 <p>
+                     Sign in.<br> POST call to the following url :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/user/login</code>
+                 </p>
+                 <br>
+                 <pre><code class="json">
+ Result example :
+ 
+ {
+     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6
+     IkpXVCJ9.eyJfaWQiOiI2NTY4ZDE2NzQwYmM2NWNhNTJhZmE
+     1YTEiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwMTUzODA3Nywi
+     ZXhwIjoxNzAxNTQxNjc3f
+     Q.PILiTaZQoGT-wwff0AR_MPyjfKxEC1czMTLWi1HDRg4"
+ }             </code></pre>
+                 <h4>BODY PARAMETERS</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Required</th>
+                             <th>Description</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>email</td>
+                             <td>Yes</td>
+                             <td>(Email) Email, min length 2 characters max length 100 characters.</td>
+ 
+                         </tr>
+ 
+                         <tr>
+                             <td>password</td>
+                             <td>Yes</td>
+                             <td>(String) Password, min length 6 characters max length 100 characters. Must contain at
+                                 least one lowercase letter, one uppercase letter, and one digit. </td>
+ 
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-users-info">
+                 <h2>User's Info</h2>
+                 <pre><code class="json">
+ Result example :
+ 
+ [
+     {
+         "_id": "6568cad1835d9e558d9b2111",
+         "firstName": "Mem",
+         "lastName": "Ory",
+         "email": "mem@gmail.com",
+          "date_created": "2023-11-30T17:44:26.682Z",
+          "toys": [
+             "6568d43a40bc65ca52afa5a4",
+             "656b692d9e175b4881983398"
+         ],
+         "role": "user",
+         "__v": 0
+     }
+ ]  
+                                     </code></pre>
+                 <p>
+                     Get all user's info. Only the admin is authorized to submit this request<br> GET call to the
+                     following url :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/admin/usersList</code>
+                 </p>
+                 <br>
+                 <h4>HEADERS KEY</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Key</th>
+                             <th></th>
+                             <th>Value</th>
+                             <td></td>
+ 
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>x-api-key</td>
+                             <td></td>
+                             <td>Token (the token is valid for sixty minutes).<span> </span></td>
+                             <td><span></span></td>
+                         </tr>
+                     </tbody>
+                 </table>
+ 
+             </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-toys-info">
+                 <h2>Toys Info</h2>
+                 <pre><code class="json">
+ Result example :
+ 
+ [
+     {
+         "_id": "656b8431dcb540bde3501d22",
+         "name": "Baby Doctor",
+         "produced_country": "China",
+         "info": "Barbie Careers Doll & Playset, 
+                  Baby Doctor Theme with Blonde Fashion Doll, 
+                  2 Baby Dolls, Furniture & Accessories",
+         "category": "Dolls",
+         "img_url": "no image",
+         "price": 300,
+         "date_created": "2023-12-02T18:18:05.051Z",
+         "__v": 0
+     }
+ ]  
+                                     </code></pre>
+                 <p>
+                     Get all toys info, sorted by name. <br> GET call to the
+                     following url :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/toys/</code>
+                 </p>
+                 <br>
+                 <h4>QUERY PARAMETERS</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Default </th>
+                             <th>Description</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>perPage</td>
+                             <td>10</td>
+                             <td>Get <code class="higlighted break-word">perPage</code> products in each page. <code
+                                     class="higlighted break-word">/toys/?perPage=15</code> </td>
+                         </tr>
+                         <tr>
+                             <td>page</td>
+                             <td>1</td>
+                             <td>Get toys from <code class="higlighted break-word">page</code>.<code
+                                     class="higlighted break-word">/toys/?page=2</code> </td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-search">
+                 <h2>Toys Search</h2>
+                 <pre><code class="json">
+ Result example :
+ 
+ [
+     {
+        "_id": "656b8d7e3e809482462f7e2b",
+        "name": "Baby Doll in Gift Box",
+        "produced_country": "ER",
+        "info": "Enjoyin 12'' Baby Doll in Gift Box with Pink Cloths, 
+                 Pacifier, 13''x13'' Microfabric",
+        "category": "Dolls",
+        "img_url": "no image",
+        "price": 300,
+        "date_created": "2023-12-02T20:01:18.083Z",
+        "__v": 0
+     }
+ ]  
+                                     </code></pre>
+                 <p>
+                     Get toys by name or info, sorted by name.<br> GET call to the
+                     following url:<br>
+                     <code class="higlighted break-word">****http://localhost:3000/toys</code>
+                 </p>
+                 <br>
+                 <h4>QUERY PARAMETERS</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Default </th>
+                             <th>Description</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>s</td>
+                             <td> </td>
+                             <td>Get the toys that <code class="higlighted break-word">s</code> is included in their name or info.<code
+                                     class="higlighted break-word">/toys/search?s=Pink</code> </td>
+                         </tr>
+                         <tr>
+                             <td>perPage</td>
+                             <td>10</td>
+                             <td>Get <code class="higlighted break-word">perPage</code> products in each page. <code
+                                     class="higlighted break-word">/toys/search?perPage=15</code> </td>
+                         </tr>
+                         <tr>
+                             <td>page</td>
+                             <td>1</td>
+                             <td>Get toys from <code class="higlighted break-word">page</code>.<code
+                                     class="higlighted break-word">/toys/search?page=2</code> </td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-category">
+                 <h2>Toys Category</h2>
+                 <pre><code class="json">
+ Result example :
+ 
+ [
+     {
+        "_id": "656b8d7e3e809482462f7e2b",
+        "name": "Baby Doll in Gift Box",
+        "produced_country": "ER",
+        "info": "Enjoyin 12'' Baby Doll in Gift Box with Pink Cloths, 
+                 Pacifier, 13''x13'' Microfabric",
+        "category": "Dolls",
+        "img_url": "no image",
+        "price": 300,
+        "date_created": "2023-12-02T20:01:18.083Z",
+        "__v": 0
+     }
+ ]  
+                                     </code></pre>
+                 <p>
+                     Get toys by category, sorted by name.<br> GET call to the
+                     following url (replace the 'dolls' as wanted) :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/toys/category/dolls</code>
+                 </p>
+                 <br>
+                 <h4>QUERY PARAMETERS</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Default </th>
+                             <th>Description</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>perPage</td>
+                             <td>10</td>
+                             <td>Get <code class="higlighted break-word">perPage</code> products in each page. <code
+                                     class="higlighted break-word">/toys/category/dolls?perPage=15</code> </td>
+                         </tr>
+                         <tr>
+                             <td>page</td>
+                             <td>1</td>
+                             <td>Get toys from <code class="higlighted break-word">page</code>.<code
+                                     class="higlighted break-word">/toys/category/dolls?page=2</code> </td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+ 
+ 
+ 
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-price">
+                 <h2>Toys Price</h2>
+                 <pre><code class="json">
+ Result example :
+ 
+ [
+     {
+        "_id": "656b8d7e3e809482462f7e2b",
+        "name": "Baby Doll in Gift Box",
+        "produced_country": "ER",
+        "info": "Enjoyin 12'' Baby Doll in Gift Box with Pink Cloths, 
+                 Pacifier, 13''x13'' Microfabric",
+        "category": "Dolls",
+        "img_url": "no image",
+        "price": 300,
+        "date_created": "2023-12-02T20:01:18.083Z",
+        "__v": 0
+     }
+ ]  
+                                     </code></pre>
+                 <p>
+                     Get toys by specific price range, sorted by price.<br> GET call to the
+                     following url (replace the 'dolls' as wanted) :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/toys/prices</code>
+                 </p>
+                 <br>
+                 <h4>QUERY PARAMETERS</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Default </th>
+                             <th>Description</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>minPrice</td>
+                             <td>0</td>
+                             <td>Set the lower limit by <code class="higlighted break-word">minPrice</code>. <code
+                                     class="higlighted break-word">/toys/prices?minPrice=200</code> </td>
+                         </tr>
+                         <tr>
+                             <td>maxPrice</td>
+                             <td><code class="higlighted break-word">MAX_SAFE_INTEGER</code></td>
+                             <td>Set the upper limit by <code class="higlighted break-word">maxPrice</code>ץ <code
+                                     class="higlighted break-word">/toys/prices?maxPrice=300</code> </td>
+                         </tr>
+                         <tr>
+                             <td>perPage</td>
+                             <td>10</td>
+                             <td>Get <code class="higlighted break-word">perPage</code> products in each page. <code
+                                     class="higlighted break-word">/toys/prices?perPage=15</code> </td>
+                         </tr>
+                         <tr>
+                             <td>page</td>
+                             <td>1</td>
+                             <td>Get toys from <code class="higlighted break-word">page</code>.<code
+                                     class="higlighted break-word">/toys/prices?page=2</code> </td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+ 
+ 
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-single">
+                 <h2>single toy</h2>
+                 <pre><code class="json">
+ Result example :
+ 
+ [
+     {
+        "_id": "656b8d7e3e809482462f7e2b",
+        "name": "Baby Doll in Gift Box",
+        "produced_country": "ER",
+        "info": "Enjoyin 12'' Baby Doll in Gift Box with Pink Cloths, 
+                 Pacifier, 13''x13'' Microfabric",
+        "category": "Dolls",
+        "img_url": "no image",
+        "price": 300,
+        "date_created": "2023-12-02T20:01:18.083Z",
+        "__v": 0
+     }
+ ]  
+                                     </code></pre>
+                 <p>
+                     Get a toy by _id.<br> GET call to the
+                     following url (replace the '_id' with valid toy _id) :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/toys/single/_id</code>
+                 </p>
+             </div>
+             
+ 
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-add">
+                 <h2>add toy</h2>
+                 <pre><code class="json">
+ Body example
+ {
+     "name": "Baby Doctor",
+     "produced_country":"China",
+     "info": "Barbie Careers Doll & Playset",
+     "category": "Dolls",
+     "img_url": "no image",
+     "price": 300
+    
+ }
+                 </code></pre>
+                 <p>
+                     Add a new toy.<br> POST call to the following url :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/user/</code>
+                 </p>
+                 <br>
+                 <h4>HEADERS KEY</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Key</th>
+                             <th></th>
+                             <th>Value</th>
+                             <td></td>
+ 
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>x-api-key</td>
+                             <td></td>
+                             <td>Token (the token is valid for sixty minutes).<span> </span></td>
+                             <td><span></span></td>
+                         </tr>
+                     </tbody>
+                 </table>
+                 <pre><code class="json">
+ Result example :
+ 
+ { 
+     "name": "Baby Doctor",
+     "produced_country": "China",
+     "info": "Barbie Careers Doll & Playset",
+     "category": "Dolls",
+     "img_url": "no image",
+     "price": 300,
+     "date_created": "2023-12-02T18:18:05.051Z",
+     "_id": "656b8431dcb540bde3501d22",
+     "__v": 0
+ }
+                 </code></pre>
+                 <h4>BODY PARAMETERS</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Required</th>
+                             <th>Description</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>name</td>
+                             <td>Yes</td>
+                             <td>(String) Name of the toy, min length 2 characters max length 100 characters.</td>
+                         </tr>
+ 
+                         <tr>
+                             <td>produced_country</td>
+                             <td>Yes</td>
+                             <td>The country where the toy is made, min length 2 characters max length 50 characters.</td>
+                         </tr>
+                         <tr>
+                             <td>info</td>
+                             <td>No</td>
+                             <td>(Default "No info") Additional information, min length 3 characters max length 1000 characters.</td>
+ 
+                         </tr>
+                         <tr>
+                             <td>category</td>
+                             <td>Yes</td>
+                             <td>The toy category, min length 3 characters max length 50 characters.</td>
+ 
+                         </tr>
+                         <tr>
+                             <td>img_url</td>
+                             <td>No</td>
+                             <td>(Default "No image") Image url, max length 500 characters.</td>
+ 
+                         </tr>
+                         <tr>
+                             <td>price</td>
+                             <td>Yes</td>
+                             <td>(Number) The toy price, min value: 0.5, max value: <code class="higlighted break-word">MAX_SAFE_INTEGER</code>.</td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+ 
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-delete">
+                 <h2>delete toy</h2>
+                    <pre><code class="json">
+ Result example :
+ 
+ {
+     "msg": "Toy deleted successfully"
+ }
+                 </code></pre>
+                 <p>
+                     Delete a toy by _id. Only the admin or toy adder are authorized to submit this request.<br> DELETE call to the following url(replace the '_id' with valid toy _id) :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/toys/_id</code>
+                 </p>
+                 
+  
+                 <br>
+                 <h4>HEADERS KEY</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Key</th>
+                             <th></th>
+                             <th>Value</th>
+                             <td></td>
+ 
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>x-api-key</td>
+                             <td></td>
+                             <td>Token (the token is valid for sixty minutes).<span> </span></td>
+                             <td><span></span></td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+ 
+ 
+ 
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-edit">
+                 <h2>edit toy</h2>
+                 <pre><code class="json">
+ Body example
+ {
+     "name": "Baby Doctor",
+     "produced_country":"China",
+     "info": "Barbie Careers Doll & Playset",
+     "category": "Dolls",
+     "img_url": "no image",
+     "price": 300
+    
+ }
+                 </code></pre>
+                 <p>
+                     Edit a toy. Only the admin or toy adder are authorized to submit this request.<br> PUT call to the following url(replace the '_id' with valid toy _id) :<br>
+                     <code class="higlighted break-word">****http://localhost:3000/toys/_id</code>
+                 </p>
+                 <br>
+                 <h4>HEADERS KEY</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Key</th>
+                             <th></th>
+                             <th>Value</th>
+                             <td></td>
+ 
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>x-api-key</td>
+                             <td></td>
+                             <td>Token (the token is valid for sixty minutes).<span> </span></td>
+                             <td><span></span></td>
+                         </tr>
+                     </tbody>
+                 </table>
+                 <pre><code class="json">
+ Result example :
+ 
+ { 
+     "name": "Baby Doctor",
+     "produced_country": "China",
+     "info": "Barbie Careers Doll & Playset",
+     "category": "Dolls",
+     "img_url": "no image",
+     "price": 300,
+     "date_created": "2023-12-02T18:18:05.051Z",
+     "_id": "656b8431dcb540bde3501d22",
+     "__v": 0
+ }
+                 </code></pre>
+                 <h4>BODY PARAMETERS</h4>
+                 <table class="central-overflow-x">
+                     <thead>
+                         <tr>
+                             <th>Name</th>
+                             <th>Required</th>
+                             <th>Description</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <td>name</td>
+                             <td>Yes</td>
+                             <td>(String) Name of the toy, min length 2 characters max length 100 characters.</td>
+                         </tr>
+ 
+                         <tr>
+                             <td>produced_country</td>
+                             <td>Yes</td>
+                             <td>The country where the toy is made, min length 2 characters max length 50 characters.</td>
+                         </tr>
+                         <tr>
+                             <td>info</td>
+                             <td>No</td>
+                             <td>(Default "No info") Additional information, min length 3 characters max length 1000 characters.</td>
+ 
+                         </tr>
+                         <tr>
+                             <td>category</td>
+                             <td>Yes</td>
+                             <td>The toy category, min length 3 characters max length 50 characters.</td>
+ 
+                         </tr>
+                         <tr>
+                             <td>img_url</td>
+                             <td>No</td>
+                             <td>(Default "No image") Image url, max length 500 characters.</td>
+ 
+                         </tr>
+                         <tr>
+                             <td>price</td>
+                             <td>Yes</td>
+                             <td>(Number) The toy price, min value: 0.5, max value: <code class="higlighted break-word">MAX_SAFE_INTEGER</code>.</td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+             <div class="overflow-hidden content-section" id="content-errors">
+                 <h2>Errors</h2>
+                 <p>
+                     The API uses the following error codes:
+                 </p>
+                 <table>
+                     <thead>
+                         <tr>
+                             <th>Error Code</th>
+                             <th>Meaning</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                        
+                         <tr>
+                             <td>400</td>
+                             <td>
+                                 Invalid body. This error appears if you
+                                 miss required fields, exceed the limits, or add fields in the body request.
+                             </td>
+                         </tr>
+                        
+                         <tr>
+                             <td>401</td>
+                             <td>
+                                 Password and email mismatch. This error appears if you
+                                 Trying to log in with an incorrect email or password.
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>402</td>
+                             <td>
+                                 Unknown or unvalid user <code class="higlighted">token</code>. This error appears if you
+                                 use an unknow user <code class="higlighted">token</code> or if the user <code
+                                     class="higlighted">token</code> expired.
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>403</td>
+                             <td>
+                                 Permission denied. This error appears when a user tries to delete or edit a toy that is not theirs.
+                             </td>
+                         </tr>
+                         <tr>
+                             <td>500</td>
+                             <td>
+                                 General error.
+                             </td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+         </div>
+         <div class="content-code"></div>
+     </div>
+    
+     <script src="js/script.js"></script>
+ </body>
+ 
+ </html>
